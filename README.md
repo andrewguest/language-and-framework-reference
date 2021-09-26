@@ -7,8 +7,23 @@ All examples should include a Dockerfile to maintain a consistent environment.
 * A script to fetch data about the Death Star from The Star Wars API (SWAPI) and display the result in the terminal
   * `curl https://swapi.dev/api/starships/9`
 * An API that returns the following types of data on these routes:
-    |Type of data|Description|Route|Example|
-    |--|--|--|--|
-    |JSON|Returns a simple JSON message|`/json/simple`|`{"message": "Hello World"}`|
-    |JSON|Queries the database and then returns the data in JSON format|`/json/db`|`{"db message": "This is from the DB"}`|
-    |WebSocket|WebSocket connection|`/ws`|`This is a WebSocket message from the server`|
+    |Type of response|HTTP verb|Description|Route|Example|
+    |--|--|--|--|--|
+    |JSON|GET|Returns a simple JSON message|`/json/simple`|`{"message": "Hello World"}`|
+    |JSON|POST|Creates an entry in the `notes` table in the Postgres database|`/json/db`|See example below|
+    |JSON|GET|Returns all `notes` from the DB in JSON format|`/json/db`|See example below|
+    |WebSocket|N/A|WebSocket connection|`/ws`|`This is a WebSocket message from the server`|
+
+    #### DB example (using Postgres)
+    These should be created in the `notes` table:
+
+    |Column|Type|Example|
+    |--|--|--|
+    |id|int (auto-incrementing)|`0`|
+    |text|varchar|`This is my first note`|
+    |completed|boolean|`true`|
+
+    #### Examples
+    **Create new note:** `curl -X POST http://localhost:8000/json/db -H 'Content-Type: application/json' -d '{"text":"My first note","completed": true}'`
+
+    **Get all notes:** `curl http://localhost:8000/json/db` sent it|`/ws`|`Your message: <your message here>`|

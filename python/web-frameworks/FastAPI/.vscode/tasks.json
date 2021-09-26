@@ -1,0 +1,35 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "docker-build",
+			"label": "docker-build",
+			"platform": "python",
+			"dockerBuild": {
+				"tag": "fastapi-example:latest",
+				"dockerfile": "${workspaceFolder}/Dockerfile",
+				"context": "${workspaceFolder}",
+				"pull": true
+			}
+		},
+		{
+			"type": "docker-run",
+			"label": "docker-run: debug",
+			"dependsOn": [
+				"docker-build"
+			],
+			"python": {
+				"args": [
+					"--bind",
+					":8000",
+					"--workers",
+					"1",
+					"--worker-class",
+					"uvicorn.workers.UvicornWorker",
+					"app.main:app"
+				],
+				"module": "gunicorn"
+			}
+		}
+	]
+}
