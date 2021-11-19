@@ -14,7 +14,7 @@ PyYAML==5.4.1
 secure==0.3.0
 SQLAlchemy==1.4.27
 starlette==0.17.1
-typing-extensions==3.10.0.2
+typing-extensions==4.0.0
 uvicorn==0.15.0
 uvloop==0.16.0
 watchgod==0.7
