@@ -15,7 +15,7 @@ secure==0.3.0
 SQLAlchemy==1.4.31
 starlette==0.18.0
 typing-extensions==4.0.1
-uvicorn==0.17.0
+uvicorn==0.17.0.post1
 uvloop==0.16.0
 watchgod==0.7
 websockets==10.1
