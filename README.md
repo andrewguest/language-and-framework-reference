@@ -4,9 +4,8 @@ This repository is meant as an example of how to do the samething in different l
 All examples should include a Dockerfile to maintain a consistent environment.
 
 #### The current examples are:
-* A script to fetch data about the Death Star from The Star Wars API (SWAPI) and display the result in the terminal
-  * `curl https://swapi.dev/api/starships/9`
-* An API that returns the following types of data on these routes:
+1. Bit counter
+2. An API that returns the following types of data on these routes:
     |Type of response|HTTP verb|Description|Route|Example|
     |--|--|--|--|--|
     |JSON|GET|Returns a simple JSON message|`/json/simple`|`{"message": "Hello World"}`|
