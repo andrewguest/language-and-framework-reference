@@ -12,7 +12,7 @@ pydantic==1.9.1
 python-dotenv==0.20.0
 PyYAML==6.0
 secure==0.3.0
-SQLAlchemy==1.4.37
+SQLAlchemy==1.4.38
 starlette==0.20.3
 typing-extensions==4.2.0
 uvicorn==0.17.6
