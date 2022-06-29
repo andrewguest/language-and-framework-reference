@@ -13,7 +13,7 @@ python-dotenv==0.20.0
 PyYAML==6.0
 secure==0.3.0
 SQLAlchemy==1.4.39
-starlette==0.20.3
+starlette==0.20.4
 typing-extensions==4.2.0
 uvicorn==0.18.1
 uvloop==0.16.0
