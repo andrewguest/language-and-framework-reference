@@ -16,6 +16,6 @@ SQLAlchemy==1.4.41
 starlette==0.20.4
 typing-extensions==4.3.0
 uvicorn==0.18.3
-uvloop==0.16.0
+uvloop==0.17.0
 watchgod==0.8.2
 websockets==10.3
