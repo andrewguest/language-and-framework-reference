@@ -1,0 +1,23 @@
+version: '3.4'
+
+services:
+  db:
+    image: postgres:latest
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=Secur3Passw0rd
+    ports:
+      - 5432:5432
+    container_name: drf_example_db
+    restart: always
+
+  drf:
+    image: drf-example
+    build: .
+    command: gunicorn -b :8000 json_api.wsgi
+    ports:
+      - 8000:8000
+    container_name: drf_example
+    depends_on:
+      - db
+    restart: always

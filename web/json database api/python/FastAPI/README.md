@@ -9,7 +9,7 @@ docker-compose up -d
 or manually:
 
 ```bash
-cd language-and-framework-reference/python/web-frameworks/FastAPI
+cd language-and-framework-reference/web/json database api/python/FastAPI
 
 # Run a Postgres DB (you would set a secure password in a real world application)
 docker run -d --name=fastapi_examaple_db -e POSTGRES_PASSWORD=Secur3Passw0rd postgres
