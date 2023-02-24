@@ -9,9 +9,9 @@ from database.config import database, metadata, engine
 
 
 app = FastAPI(
-    title='FastAPI Example',
-    description='Example API built in the FastAPI framework',
-    version='0.0.1'
+    title="FastAPI Example",
+    description="Example API built in the FastAPI framework",
+    version="0.0.1",
 )
 secure_headers = secure.Secure()
 metadata.create_all(engine)
@@ -33,9 +33,11 @@ app.add_middleware(
     allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
-    allow_headers=["*"]
+    allow_headers=["*"],
 )
-@app.middleware('http')
+
+
+@app.middleware("http")
 async def set_secure_headers(request, call_next):
     response = await call_next(request)
     secure_headers.framework.fastapi(response)

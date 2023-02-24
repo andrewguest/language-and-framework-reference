@@ -12,6 +12,7 @@ notes = sqlalchemy.Table(
     sqlalchemy.Column("completed", sqlalchemy.Boolean),
 )
 
+
 class NoteIn(BaseModel):
     text: str
     completed: bool
