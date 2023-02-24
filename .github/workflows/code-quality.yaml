@@ -9,13 +9,17 @@ jobs:
     name: Format code with Black
     runs-on: ubuntu-latest
     steps:
-      - name: Python Black format
+      - name: Checkout repository
         uses: actions/checkout@v3
-      - uses: psf/black@stable
+
+      - name: Python Black formatter check
+        id: blackFormatterCheck
+        uses: psf/black@stable
         with:
           src: "./"
+
       - name: Create Pull Request
-        if: ${{ failure() }}
+        if: failure() && steps.blackFormatterCheck.outcome == 'failure'
         uses: peter-evans/create-pull-request@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
