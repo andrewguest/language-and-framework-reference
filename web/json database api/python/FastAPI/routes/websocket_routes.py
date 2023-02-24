@@ -1,10 +1,10 @@
 from fastapi import APIRouter, WebSocket
 
 
-router = APIRouter(tags=['websocket'])
+router = APIRouter(tags=["websocket"])
 
 
-@router.websocket('/ws')
+@router.websocket("/ws")
 async def websocket_endpoint(websocket: WebSocket):
     await websocket.accept()
     while True:

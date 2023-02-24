@@ -12,21 +12,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Python Black formatter check
-        id: blackFormatterCheck
+      - name: Run black formatter checks
         uses: psf/black@stable
         with:
           src: "./"
-
-      - name: Create Pull Request
-        if: failure() && steps.blackFormatterCheck.outcome == 'failure'
-        uses: peter-evans/create-pull-request@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          title: "Format Python code with psf/black"
-          commit-message: ":art: Format Python code with psf/black"
-          body: |
-            There appear to be some python formatting errors in ${{ github.sha }}. This pull request
-            uses the [psf/black](https://github.com/psf/black) formatter to fix these issues.
-          base: ${{ github.head_ref }} # Creates pull request onto pull request or commit branch
-          branch: actions/black
+          options: "--check --diff --color"
+          jupyter: true
