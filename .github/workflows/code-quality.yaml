@@ -12,7 +12,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Run black formatter
-        run: |
-          pip install black
-          black .
+      - name: Run black formatter checks
+        uses: psf/black@stable
+        with:
+          src: "./"
+          options: "--check --diff --color"
+          jupyter: true
