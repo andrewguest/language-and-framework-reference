@@ -18,4 +18,16 @@ jobs:
         with:
           src: "./"
           options: "--check --diff --color"
-          jupyter: true
+  
+  python-isort:
+    name: Fomat code with isort
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Run isort formatter checks
+        uses: isort/isort-action@v1.0.0
+        with:
+          configuration: "--check --diff --color"
+          requirementsFiles: "requirements.txt"
