@@ -1,6 +1,6 @@
 asgiref==3.7.2
 asyncpg==0.28.0
-click==8.1.6
+click==8.1.7
 databases==0.7.0
 fastapi==0.101.1
 greenlet==2.0.2
