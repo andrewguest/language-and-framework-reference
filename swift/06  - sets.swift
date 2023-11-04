@@ -57,3 +57,16 @@ var book3: Set = ["Jack", "Blunderbore", "Beanstock"]
 var fairyTales = book1.union(book2).union(book3)
 // ["Pig 1", "Pig 2", "Pig 3", "Wolf", "Little Red Riding Hood", "Grandma", "Wolf", "Jack", "Blunderbore", "Beanstock"]
 
+
+// Find elements in one set or the other, but not both
+var nintendoSwitch: Set = ["Animal Crossing", "DOOM Eternal", "Stardew Valley"]
+var playStation4: Set = ["DOOM Eternal", "Stardew Valley", "The Last of Us"]
+var exclusiveGames = nintendoSwitch.symmetricDifference(playStation4)
+// ["Animal Crossing", "The Last of Us"]
+
+
+// Remove all items in one set from another set
+var animals: Set = ["Bison", "Mountain Gorilla", "Hedgehog", "Sea Turtle", "Vaquita", "Ocelot"]
+var notEndangered: Set = ["Bison", "Hedgehog", "Ocelot"]
+var endangered = animals.subtracting(notEndangered)
+// ["Mountain Gorilla", "Sea Turtle", "Vaquita"]
