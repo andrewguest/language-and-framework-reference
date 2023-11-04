@@ -12,6 +12,7 @@ func multiply(x: Int, y: Int) -> Int {
 }
 
 
+
 // Argument labels
 func functionName(argumentLabel parameterName: type) {
     print(parameterName)
@@ -44,3 +45,41 @@ func winner(_ firstPoints: Int, secondPoints: int) -> String {
 winner(10, secondPoints: 20)
 // 10 doesn't need a label (which would be firstPoints) due to the _ in the function definition
 // You still need an argument label with secondPoints because it doesn't have a _
+
+
+
+// Returning multiple values
+func favoriteBook() -> (name: String, author: String, yearPublished: Int) {
+    retrun ("Harry Potter and the Philosopher's Stone", "J.K. Rowling", 1997)
+}
+
+let book = favoriteBook()
+print(book)  // prints: (name: "Harry Potter and the Philosopher\'s Stone", author: "J.K. Rowling", yearPublished: 1997)
+print(book.name)  // prints: Harry Potter and the Philosopher's Stone
+print(book.author)  // prints: J.K. Rowling
+
+
+
+// Default parameters
+func totalWithTip(total: Double, tip: Double = 0.2) -> Double {
+    return total + (total * tip)
+}
+
+
+
+// Variadic parameters
+// A variadic parameter is a parameter that accepts zero or more values of a certain type.
+
+// `numbers` is a variadic parameter that accepts 0 or more values and is interpreted as an Array within the function.
+func averageExchangeRate(numbers: Double...) -> Double {
+    var total: Double = 0
+    let numValues = Double(numbers.count)
+
+    for number in numbers {
+        total += number
+    }
+
+    return total / numValues
+}
+
+print(averageExchangeRate(numbers: 0.81380, 0.77268, 0.77453, 0.75466, 0.75729, 0.78241))  // prints: 0.7758949999999999

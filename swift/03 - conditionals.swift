@@ -33,6 +33,7 @@ var orderSuccessfullyPlaced: Bool = true
 orderSuccessfullyPlaced ? print("Your order was successfully received.") : print("Something went wrong.")
 
 
+
 // Switch statement
 
 var city: String = "New York"
