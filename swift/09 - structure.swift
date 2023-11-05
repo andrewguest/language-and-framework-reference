@@ -23,3 +23,18 @@ struct Cat {
 
 // Create an instance of Cat() with the default values
 var sabrina = Cat()  // sabrina.age = 1 and sabrina.livesLeft = 9
+
+
+
+// The init() method
+// init() allows you to customize the instances of a stuct
+struct Dog {
+    var age: Int
+    var isGood: Bool
+
+    init (age: Int, isGood: Bool) {
+        self.age = age
+        self.isGood = isGood
+    }
+}
+
