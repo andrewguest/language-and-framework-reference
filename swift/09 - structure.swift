@@ -38,3 +38,18 @@ struct Dog {
     }
 }
 
+
+
+// Struct methods
+// In addition to the `init()` method, we can create our own methods within a Struct.
+struct Wolf {
+    var type: String
+    var furColor: String
+
+    func growl() {
+        print("grrr")
+    }
+}
+
+var articWolf = Wolf(type: "Artic Wolf", furColor: "white")
+articWolf.growl()  // prints: grrr
