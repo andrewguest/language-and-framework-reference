@@ -53,3 +53,25 @@ struct Wolf {
 
 var articWolf = Wolf(type: "Artic Wolf", furColor: "white")
 articWolf.growl()  // prints: grrr
+
+
+
+// Mutating methods
+// How to change an instance's properties using an instance method
+struct Dog {
+    var age: Int
+    var isGood: Bool
+
+    init(age: Int, isGood: Bool) {
+        self.age = age
+        self.isGood = isGood
+    }
+
+    // birthday() is a mutating method
+    mutating func birthday() -> Int {
+        print("Best doggy")
+        self.age += 1
+        return self.age
+    }
+}
+
