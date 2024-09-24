@@ -1,4 +1,4 @@
-asgiref==3.7.2
+asgiref==3.8.1
 asyncpg==0.29.0
 click==8.1.7
 databases==0.8.0
